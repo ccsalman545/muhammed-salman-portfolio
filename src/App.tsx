@@ -1,8 +1,9 @@
 import {
   ArrowDown,
   ArrowUpRight,
+  Check,
   Code2,
-  ContactRound,
+  GitBranch,
   Mail,
   MapPin,
 } from 'lucide-react'
@@ -13,92 +14,70 @@ import { portfolio } from './data/portfolio'
 function App() {
   return (
     <div id="top">
-      <a className="skip-link" href="#main">Skip to content</a>
+      <a className="skip-link" href="#main">Skip to main content</a>
       <Header />
 
       <main id="main">
         <section className="hero container" aria-labelledby="hero-title">
           <div className="hero-glow" aria-hidden="true" />
-          <div className="availability reveal">
-            <span aria-hidden="true" /> Available for select projects
-          </div>
+          <p className="availability reveal">
+            <span aria-hidden="true" /> {portfolio.availability}
+          </p>
           <h1 id="hero-title" className="reveal delay-1">
-            Building digital products with <span>clarity and purpose.</span>
+            Frontend experiences built with <span>care and clarity.</span>
           </h1>
           <p className="hero-copy reveal delay-2">{portfolio.intro}</p>
           <div className="hero-actions reveal delay-3">
             <a className="button primary" href="#projects">
-              View my work <ArrowDown size={17} />
+              Explore my work <ArrowDown size={17} aria-hidden="true" />
             </a>
             <a className="button secondary" href={`mailto:${portfolio.email}`}>
-              Get in touch <ArrowUpRight size={17} />
+              Start a conversation <ArrowUpRight size={17} aria-hidden="true" />
             </a>
           </div>
-          <div className="hero-meta reveal delay-3">
-            <span><MapPin size={15} /> {portfolio.location}</span>
+          <div className="hero-meta reveal delay-3" aria-label="Profile summary">
+            <span><MapPin size={15} aria-hidden="true" /> {portfolio.location}</span>
             <span>{portfolio.role}</span>
           </div>
         </section>
 
-        <section id="about" className="section container split-section">
-          <SectionHeading eyebrow="01 / About" title="A builder who cares about the details." />
+        <section id="about" className="section container split-section" aria-labelledby="about-title">
+          <SectionHeading id="about-title" eyebrow="01 / About" title="Engineering thoughtful interfaces." />
           <div className="body-copy reveal">
-            <p>{portfolio.about}</p>
-            <p>
-              My approach combines pragmatic engineering, careful interaction design,
-              and close collaboration. The result is software that feels calm, fast,
-              and obvious to use.
-            </p>
+            {portfolio.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
         </section>
 
-        <section id="skills" className="section container split-section">
-          <SectionHeading eyebrow="02 / Skills" title="Tools I use to ship quality work." />
-          <ul className="skill-grid reveal" aria-label="Technical skills">
-            {portfolio.skills.map((skill, index) => (
-              <li key={skill}><span>{String(index + 1).padStart(2, '0')}</span>{skill}</li>
+        <section id="skills" className="section container split-section" aria-labelledby="skills-title">
+          <SectionHeading id="skills-title" eyebrow="02 / Capabilities" title="A focused frontend toolkit." />
+          <div className="skill-groups reveal">
+            {portfolio.skillGroups.map((group) => (
+              <div className="skill-group" key={group.label}>
+                <h3>{group.label}</h3>
+                <ul aria-label={`${group.label} skills`}>
+                  {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
 
-        <section id="experience" className="section container">
-          <SectionHeading eyebrow="03 / Experience" title="Where I’ve made an impact." />
+        <section id="experience" className="section container" aria-labelledby="experience-title">
+          <SectionHeading id="experience-title" eyebrow="03 / Experience" title="Learning by shipping." />
           <div className="timeline">
             {portfolio.experience.map((item) => (
-              <article className="timeline-item reveal" key={item.company}>
+              <article className="timeline-item reveal" key={item.organization}>
                 <p className="period">{item.period}</p>
                 <div>
                   <h3>{item.role}</h3>
-                  <p className="company">{item.company}</p>
+                  <p className="company">{item.organization}</p>
                 </div>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="education" className="section container split-section">
-          <SectionHeading eyebrow="04 / Education" title="The foundation." />
-          <article className="education-card reveal">
-            <div>
-              <p className="period">{portfolio.education.period}</p>
-              <h3>{portfolio.education.degree}</h3>
-              <p>{portfolio.education.school}</p>
-            </div>
-          </article>
-        </section>
-
-        <section id="projects" className="section container">
-          <SectionHeading eyebrow="05 / Projects" title="Selected work." />
-          <div className="project-grid">
-            {portfolio.projects.map((project, index) => (
-              <article className="project-card reveal" key={project.title}>
-                <div className="project-number">0{index + 1}</div>
                 <div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <ul aria-label={`${project.title} technologies`}>
-                    {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                  <p>{item.description}</p>
+                  <ul className="achievement-list">
+                    {item.achievements.map((achievement) => (
+                      <li key={achievement}><Check size={15} aria-hidden="true" />{achievement}</li>
+                    ))}
                   </ul>
                 </div>
               </article>
@@ -106,23 +85,73 @@ function App() {
           </div>
         </section>
 
-        <section id="contact" className="contact section container">
+        <section id="education" className="section container split-section" aria-labelledby="education-title">
+          <SectionHeading id="education-title" eyebrow="04 / Education" title="Continuous, practical learning." />
+          <article className="education-card reveal">
+            <p className="period">{portfolio.education.period}</p>
+            <h3>{portfolio.education.program}</h3>
+            <p className="education-provider">{portfolio.education.provider}</p>
+            <p>{portfolio.education.description}</p>
+          </article>
+        </section>
+
+        <section id="projects" className="section container" aria-labelledby="projects-title">
+          <SectionHeading id="projects-title" eyebrow="05 / Work" title="Selected project." />
+          <div className="project-grid">
+            {portfolio.projects.map((project) => (
+              <article className="project-card reveal" key={project.title}>
+                <div className="project-topline">
+                  <span>{project.label}</span>
+                  <span>2026</span>
+                </div>
+                <div className="project-content">
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <ul className="impact-list">
+                      {project.impact.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                  <div className="project-aside">
+                    <ul className="project-tags" aria-label={`${project.title} technologies`}>
+                      {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                    </ul>
+                    <div className="project-actions">
+                      <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">
+                        Live site <ArrowUpRight size={16} aria-hidden="true" />
+                      </a>
+                      <a className="text-link" href={project.sourceUrl} target="_blank" rel="noreferrer">
+                        Source code <Code2 size={16} aria-hidden="true" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="contact section container" aria-labelledby="contact-title">
           <p className="eyebrow reveal">06 / Contact</p>
-          <h2 className="reveal">Have a thoughtful project in mind?</h2>
-          <p className="reveal">I’m always interested in good problems and the people working on them.</p>
-          <a className="contact-link reveal" href={`mailto:${portfolio.email}`}>
-            <Mail size={22} /> {portfolio.email}
-          </a>
+          <h2 id="contact-title" className="reveal">Let’s build something useful.</h2>
+          <p className="reveal">I’m open to frontend opportunities and conversations about thoughtful web products.</p>
+          <div className="contact-actions reveal">
+            <a className="button primary" href={`mailto:${portfolio.email}`}>
+              <Mail size={18} aria-hidden="true" /> Email me
+            </a>
+            <a className="button secondary" href={portfolio.links.github} target="_blank" rel="noreferrer">
+              <GitBranch size={18} aria-hidden="true" /> View GitHub
+            </a>
+          </div>
+          <a className="contact-email reveal" href={`mailto:${portfolio.email}`}>{portfolio.email}</a>
         </section>
       </main>
 
       <footer className="footer">
         <div className="container footer-inner">
           <p>© {new Date().getFullYear()} {portfolio.name}</p>
-          <div className="social-links">
-            <a href={portfolio.links.repository} target="_blank" rel="noreferrer" aria-label="Portfolio source code on GitHub"><Code2 size={19} /></a>
-            <a href={portfolio.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><ContactRound size={19} /></a>
-          </div>
+          <p>Designed and built with React + TypeScript</p>
+          <a href="#top">Back to top <ArrowUpRight size={14} aria-hidden="true" /></a>
         </div>
       </footer>
     </div>

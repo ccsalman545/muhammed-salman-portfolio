@@ -1,65 +1,68 @@
 export const portfolio = {
-  name: 'Alex Morgan',
-  role: 'Product engineer',
-  email: 'hello@alexmorgan.dev',
-  location: 'Bengaluru, India',
+  name: 'Muhammed Salman CC',
+  shortName: 'Salman',
+  role: 'Frontend developer',
+  email: 'salmanmuthu595@gmail.com',
+  location: 'India',
+  availability: 'Open to frontend opportunities',
   intro:
-    'I design and build thoughtful digital products that turn complex problems into simple, reliable experiences.',
-  about:
-    'I am a product-focused software engineer with a strong eye for design. I enjoy working across the stack, shaping ideas from early prototypes into polished products used by real people.',
-  skills: [
-    'TypeScript',
-    'React',
-    'Next.js',
-    'Node.js',
-    'PostgreSQL',
-    'Tailwind CSS',
-    'Figma',
-    'AWS',
+    'I build fast, accessible web interfaces with React and TypeScript—turning clear product thinking into polished user experiences.',
+  about: [
+    'I am a frontend developer focused on building responsive, maintainable interfaces that feel considered at every screen size. I care about semantic HTML, accessibility, performance, and the details that make software easier to use.',
+    'My current work centers on the modern React ecosystem. I take projects from interface planning through implementation, quality checks, version control, and production deployment.',
+  ],
+  skillGroups: [
+    {
+      label: 'Frontend',
+      skills: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS'],
+    },
+    {
+      label: 'Quality',
+      skills: ['Responsive design', 'Web accessibility', 'SEO fundamentals', 'Performance'],
+    },
+    {
+      label: 'Workflow',
+      skills: ['Git', 'GitHub', 'Vite', 'Netlify', 'npm'],
+    },
   ],
   experience: [
     {
-      company: 'Northstar Labs',
-      role: 'Senior Product Engineer',
-      period: '2023 — Present',
+      organization: 'Independent development',
+      role: 'Frontend Developer',
+      period: '2026 — Present',
       description:
-        'Leading product engineering for a collaborative analytics platform, from system design through accessible frontend delivery.',
-    },
-    {
-      company: 'Orbit Systems',
-      role: 'Software Engineer',
-      period: '2020 — 2023',
-      description:
-        'Built customer-facing workflows and a shared component system that improved consistency across four product teams.',
+        'Designing, building, testing, and deploying responsive React applications with a focus on accessible interaction, maintainable TypeScript, and production performance.',
+      achievements: [
+        'Built and deployed a complete portfolio with automated Git-based delivery.',
+        'Established repeatable build, lint, accessibility, and SEO quality checks.',
+      ],
     },
   ],
   education: {
-    school: 'National Institute of Technology',
-    degree: 'B.Tech in Computer Science & Engineering',
-    period: '2016 — 2020',
+    program: 'Software engineering development',
+    provider: 'Self-directed learning and project-based practice',
+    period: 'Ongoing',
+    description:
+      'Developing practical frontend engineering skills through documentation, deliberate practice, and production projects.',
   },
   projects: [
     {
-      title: 'Relay',
+      title: 'Developer Portfolio',
+      label: 'Featured project',
       description:
-        'A focused workspace for distributed teams to share decisions, track progress, and keep projects moving.',
-      tags: ['React', 'TypeScript', 'Node.js'],
-    },
-    {
-      title: 'Prism',
-      description:
-        'A privacy-first analytics dashboard with real-time reporting and clear, actionable product insights.',
-      tags: ['Next.js', 'PostgreSQL', 'AWS'],
-    },
-    {
-      title: 'Formwork',
-      description:
-        'An accessible form builder that helps small teams publish polished forms without writing code.',
-      tags: ['React', 'Tailwind CSS', 'Figma'],
+        'A recruiter-focused portfolio engineered as a fast, accessible, responsive single-page experience with a typed content model and automated Netlify delivery.',
+      impact: [
+        'Responsive from small mobile screens to wide desktop layouts',
+        'Semantic structure, keyboard support, and reduced-motion behavior',
+        'SEO metadata, social sharing assets, caching, and security headers',
+      ],
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Netlify'],
+      liveUrl: 'https://muhammedsalmancc.netlify.app',
+      sourceUrl: 'https://github.com/ccsalman545/muhammed-salman-portfolio',
     },
   ],
   links: {
+    github: 'https://github.com/ccsalman545',
     repository: 'https://github.com/ccsalman545/muhammed-salman-portfolio',
-    linkedin: 'https://www.linkedin.com/',
   },
 } as const

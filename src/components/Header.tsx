@@ -2,7 +2,7 @@ import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { portfolio } from '../data/portfolio'
 
-const links = ['About', 'Skills', 'Experience', 'Projects', 'Contact']
+const links = ['About', 'Skills', 'Experience', 'Education', 'Projects', 'Contact']
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -11,7 +11,7 @@ export function Header() {
     <header className="site-header">
       <nav className="container nav" aria-label="Primary navigation">
         <a className="brand" href="#top" aria-label={`${portfolio.name}, home`}>
-          AM<span>.</span>
+          MS<span>.</span>
         </a>
         <button
           className="menu-button"
