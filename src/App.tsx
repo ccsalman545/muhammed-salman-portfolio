@@ -1,6 +1,7 @@
 import {
   ArrowDown,
   ArrowUpRight,
+  Code2,
   ContactRound,
   Mail,
   MapPin,
@@ -119,6 +120,7 @@ function App() {
         <div className="container footer-inner">
           <p>© {new Date().getFullYear()} {portfolio.name}</p>
           <div className="social-links">
+            <a href={portfolio.links.repository} target="_blank" rel="noreferrer" aria-label="Portfolio source code on GitHub"><Code2 size={19} /></a>
             <a href={portfolio.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><ContactRound size={19} /></a>
           </div>
         </div>

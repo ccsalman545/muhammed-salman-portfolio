@@ -59,6 +59,7 @@ export const portfolio = {
     },
   ],
   links: {
+    repository: 'https://github.com/ccsalman545/muhammed-salman-portfolio',
     linkedin: 'https://www.linkedin.com/',
   },
 } as const

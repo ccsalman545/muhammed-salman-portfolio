@@ -2,6 +2,8 @@
 
 A fast, responsive personal portfolio built with React, TypeScript, Vite, and Tailwind CSS. The visual direction is deliberately minimal: restrained color, strong typography, subtle motion, and clear information hierarchy.
 
+Repository: https://github.com/ccsalman545/muhammed-salman-portfolio
+
 ## Features
 
 - Dark-first responsive interface
