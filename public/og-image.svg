@@ -1,6 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#09090b"/>
-  <circle cx="280" cy="170" r="260" fill="#8b7cff" opacity=".15"/>
-  <text x="90" y="285" fill="#f4f4f5" font-family="Arial, sans-serif" font-size="76" font-weight="600">Alex Morgan</text>
-  <text x="90" y="365" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="36">Product engineer · Design-minded builder</text>
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(230 80) rotate(42) scale(620 500)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7563ee" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#08090c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="80" y1="0" x2="1120" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9b8cff"/>
+      <stop offset="1" stop-color="#66d9d0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#08090c"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <path d="M80 100h1040" stroke="url(#line)" stroke-width="3"/>
+  <rect x="80" y="148" width="64" height="64" rx="14" fill="#151820" stroke="#ffffff" stroke-opacity=".16"/>
+  <text x="112" y="190" text-anchor="middle" fill="#f5f7fb" font-family="Arial, sans-serif" font-size="23" font-weight="700">MS</text>
+  <text x="80" y="336" fill="#f5f7fb" font-family="Arial, sans-serif" font-size="76" font-weight="600" letter-spacing="-2">Muhammed Salman CC</text>
+  <text x="80" y="406" fill="#c9c1ff" font-family="Arial, sans-serif" font-size="36">Frontend Developer</text>
+  <text x="80" y="505" fill="#a5acb9" font-family="Arial, sans-serif" font-size="26">React · TypeScript · Accessible web interfaces</text>
+  <text x="1120" y="560" text-anchor="end" fill="#737b8a" font-family="Arial, sans-serif" font-size="20">muhammedsalmancc.netlify.app</text>
 </svg>

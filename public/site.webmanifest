@@ -1,0 +1,17 @@
+{
+  "name": "Muhammed Salman CC — Frontend Developer",
+  "short_name": "Salman",
+  "description": "Frontend developer portfolio for Muhammed Salman CC.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08090c",
+  "theme_color": "#08090c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
