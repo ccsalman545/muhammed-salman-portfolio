@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#09090b"/>
+  <circle cx="280" cy="170" r="260" fill="#8b7cff" opacity=".15"/>
+  <text x="90" y="285" fill="#f4f4f5" font-family="Arial, sans-serif" font-size="76" font-weight="600">Alex Morgan</text>
+  <text x="90" y="365" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="36">Product engineer · Design-minded builder</text>
+</svg>
