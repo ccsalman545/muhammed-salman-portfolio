@@ -4,6 +4,8 @@ A fast, responsive personal portfolio built with React, TypeScript, Vite, and Ta
 
 Repository: https://github.com/ccsalman545/muhammed-salman-portfolio
 
+Live site: https://muhammedsalmancc.netlify.app
+
 ## Features
 
 - Dark-first responsive interface
@@ -38,7 +40,7 @@ Most content lives in `src/data/portfolio.ts`. Update the name, email, location,
 
 Also update the following before publishing:
 
-1. Metadata and canonical URL in `index.html`.
+1. Metadata in `index.html` if the production domain changes.
 2. Initials in `src/components/Header.tsx`.
 3. Social preview content in `public/og-image.svg`.
 4. Project and social URLs in `src/data/portfolio.ts` after publishing the repository.
