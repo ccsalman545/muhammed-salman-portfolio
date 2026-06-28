@@ -44,25 +44,21 @@ export const portfolio = {
       description:
         'A focused workspace for distributed teams to share decisions, track progress, and keep projects moving.',
       tags: ['React', 'TypeScript', 'Node.js'],
-      href: 'https://github.com/',
     },
     {
       title: 'Prism',
       description:
         'A privacy-first analytics dashboard with real-time reporting and clear, actionable product insights.',
       tags: ['Next.js', 'PostgreSQL', 'AWS'],
-      href: 'https://github.com/',
     },
     {
       title: 'Formwork',
       description:
         'An accessible form builder that helps small teams publish polished forms without writing code.',
       tags: ['React', 'Tailwind CSS', 'Figma'],
-      href: 'https://github.com/',
     },
   ],
   links: {
-    github: 'https://github.com/',
     linkedin: 'https://www.linkedin.com/',
   },
 } as const

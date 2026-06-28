@@ -39,7 +39,7 @@ Also update the following before publishing:
 1. Metadata and canonical URL in `index.html`.
 2. Initials in `src/components/Header.tsx`.
 3. Social preview content in `public/og-image.svg`.
-4. Project and social URLs in `src/data/portfolio.ts`.
+4. Project and social URLs in `src/data/portfolio.ts` after publishing the repository.
 
 ## Project structure
 
