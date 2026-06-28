@@ -1,11 +1,20 @@
 import { Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { portfolio } from '../data/portfolio'
 
 const links = ['About', 'Skills', 'Experience', 'Education', 'Projects', 'Contact']
 
 export function Header() {
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [])
 
   return (
     <header className="site-header">
@@ -21,15 +30,15 @@ export function Header() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((value) => !value)}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
         </button>
-        <div id="site-menu" className={`nav-links ${open ? 'open' : ''}`}>
+        <ul id="site-menu" className={`nav-links ${open ? 'open' : ''}`}>
           {links.map((link) => (
-            <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setOpen(false)}>
-              {link}
-            </a>
+            <li key={link}>
+              <a href={`#${link.toLowerCase()}`} onClick={() => setOpen(false)}>{link}</a>
+            </li>
           ))}
-        </div>
+        </ul>
       </nav>
     </header>
   )

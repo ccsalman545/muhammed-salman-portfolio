@@ -118,10 +118,10 @@ function App() {
                     </ul>
                     <div className="project-actions">
                       <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">
-                        Live site <ArrowUpRight size={16} aria-hidden="true" />
+                        Live site <span className="sr-only">(opens in a new tab)</span><ArrowUpRight size={16} aria-hidden="true" />
                       </a>
                       <a className="text-link" href={project.sourceUrl} target="_blank" rel="noreferrer">
-                        Source code <Code2 size={16} aria-hidden="true" />
+                        Source code <span className="sr-only">(opens in a new tab)</span><Code2 size={16} aria-hidden="true" />
                       </a>
                     </div>
                   </div>
@@ -140,7 +140,7 @@ function App() {
               <Mail size={18} aria-hidden="true" /> Email me
             </a>
             <a className="button secondary" href={portfolio.links.github} target="_blank" rel="noreferrer">
-              <GitBranch size={18} aria-hidden="true" /> View GitHub
+              <GitBranch size={18} aria-hidden="true" /> View GitHub <span className="sr-only">(opens in a new tab)</span>
             </a>
           </div>
           <a className="contact-email reveal" href={`mailto:${portfolio.email}`}>{portfolio.email}</a>

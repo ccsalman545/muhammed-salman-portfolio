@@ -74,6 +74,7 @@ portfolio/
 npm run dev      # Start the development server
 npm run build    # Type-check and create a production build
 npm run lint     # Run Oxlint
+npm run test:a11y # Run the automated axe accessibility audit
 npm run preview  # Preview the production build locally
 ```
 
@@ -91,4 +92,4 @@ netlify deploy --build --prod
 
 ## Accessibility
 
-The project includes a skip link, keyboard-visible focus styling, semantic landmarks, accessible mobile navigation, descriptive labels, adequate contrast, and a `prefers-reduced-motion` fallback. Validate personalized content with Lighthouse and a keyboard pass before publishing.
+The project includes a skip link, keyboard-visible focus styling, semantic landmarks, Escape-key mobile navigation, descriptive labels, high-contrast tokens, forced-colors support, and a `prefers-reduced-motion` fallback. `npm run test:a11y` checks the rendered application with axe-core. Because jsdom cannot calculate rendered color contrast, also validate major visual changes in a browser with Lighthouse and a keyboard pass.
